@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">/* 
+3. Part A 
+A1: It will print &quot;true&quot; 4 times. 
+A2: In order to assign a value to a variable, in this case it's &quot;c&quot;, that keeps track of the character in 
+the password during the loop. 
+A3: simply because the password is length is 9 and not 10 since it counts the first character as the &quot;0&quot;. by having 
+&quot;&lt;= password.length()&quot;, it would keep counting to 10 and add an undesired loop. 
+A4: the loop would not run since there are no characters to count. the lines will also print false 4 times. 
+A5: No, lower will be false. 
+A6: No, upper will be false. 
+ 
+4. Part B 
+Before coding part 
+1. the accumulator should be 0 initially. 
+2. an if statement that checks if its a digit. 
+3. when the loop is over. 
+ 
+5. Part C 
+Think first question: boolean flags are better since they keep track of which character is upper/lower/digit . 
+ 
+6. Part D 
+ */</span>
+<span class="s2">void </span><span class="s1">main</span><span class="s3">() {</span>
+
+    <span class="s0">//6. Part D result test &amp; recordings.</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">countUppercase</span><span class="s3">(</span><span class="s4">&quot;Vanier&quot;</span><span class="s3">));</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">countUppercase</span><span class="s3">(</span><span class="s4">&quot;VANIER&quot;</span><span class="s3">));</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">countUppercase</span><span class="s3">(</span><span class="s4">&quot;vanier&quot;</span><span class="s3">));</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">countUppercase</span><span class="s3">(</span><span class="s4">&quot;V1A2&quot;</span><span class="s3">));</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">countUppercase</span><span class="s3">(</span><span class="s4">&quot;&quot;</span><span class="s3">));</span>
+
+    <span class="s1">String password </span><span class="s3">= </span><span class="s4">&quot;Vanier2026&quot;</span><span class="s3">;</span>
+
+    <span class="s2">boolean </span><span class="s1">upper </span><span class="s3">= </span><span class="s2">false</span><span class="s3">;</span>
+    <span class="s2">boolean </span><span class="s1">lower </span><span class="s3">= </span><span class="s2">false</span><span class="s3">;</span>
+    <span class="s2">boolean </span><span class="s1">digit </span><span class="s3">= </span><span class="s2">false</span><span class="s3">;</span>
+
+    <span class="s2">for </span><span class="s3">(</span><span class="s2">int </span><span class="s1">i </span><span class="s3">= </span><span class="s5">0</span><span class="s3">; </span><span class="s1">i </span><span class="s3">&lt; </span><span class="s1">password</span><span class="s3">.</span><span class="s1">length</span><span class="s3">(); </span><span class="s1">i</span><span class="s3">++) {</span>
+        <span class="s2">char </span><span class="s1">c </span><span class="s3">= </span><span class="s1">password</span><span class="s3">.</span><span class="s1">charAt</span><span class="s3">(</span><span class="s1">i</span><span class="s3">);</span>
+
+        <span class="s2">if </span><span class="s3">(</span><span class="s1">Character</span><span class="s3">.</span><span class="s1">isUpperCase</span><span class="s3">(</span><span class="s1">c</span><span class="s3">))</span>
+            <span class="s1">upper </span><span class="s3">= </span><span class="s2">true</span><span class="s3">;</span>
+        <span class="s2">else if </span><span class="s3">(</span><span class="s1">Character</span><span class="s3">.</span><span class="s1">isLowerCase</span><span class="s3">(</span><span class="s1">c</span><span class="s3">))</span>
+            <span class="s1">lower </span><span class="s3">= </span><span class="s2">true</span><span class="s3">;</span>
+        <span class="s2">else if </span><span class="s3">(</span><span class="s1">Character</span><span class="s3">.</span><span class="s1">isDigit</span><span class="s3">(</span><span class="s1">c</span><span class="s3">))</span>
+            <span class="s1">digit </span><span class="s3">= </span><span class="s2">true</span><span class="s3">;</span>
+    <span class="s3">}</span>
+
+
+
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">upper</span><span class="s3">);</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">lower</span><span class="s3">);</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">digit</span><span class="s3">);</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">upper </span><span class="s3">&amp;&amp; </span><span class="s1">lower </span><span class="s3">&amp;&amp; </span><span class="s1">digit</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s2">public static int </span><span class="s1">countDigits</span><span class="s3">(</span><span class="s1">String text</span><span class="s3">){</span>
+    <span class="s2">int </span><span class="s1">digits </span><span class="s3">= </span><span class="s5">0</span><span class="s3">;</span>
+    <span class="s2">for </span><span class="s3">(</span><span class="s2">int </span><span class="s1">i </span><span class="s3">= </span><span class="s5">0</span><span class="s3">; </span><span class="s1">i </span><span class="s3">&lt; </span><span class="s1">text</span><span class="s3">.</span><span class="s1">length</span><span class="s3">(); </span><span class="s1">i</span><span class="s3">++){</span>
+        <span class="s2">char </span><span class="s1">c </span><span class="s3">= </span><span class="s1">text</span><span class="s3">.</span><span class="s1">charAt</span><span class="s3">(</span><span class="s1">i</span><span class="s3">);</span>
+        <span class="s2">if </span><span class="s3">(</span><span class="s1">Character</span><span class="s3">.</span><span class="s1">isDigit</span><span class="s3">(</span><span class="s1">c</span><span class="s3">))</span>
+          <span class="s1">digits</span><span class="s3">++;</span>
+    <span class="s3">}</span>
+    <span class="s2">return </span><span class="s1">digits</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s2">public static boolean </span><span class="s1">isValidPassword</span><span class="s3">(</span><span class="s1">String password</span><span class="s3">){</span>
+    <span class="s2">boolean </span><span class="s1">upper </span><span class="s3">= </span><span class="s2">false</span><span class="s3">;</span>
+    <span class="s2">boolean </span><span class="s1">lower </span><span class="s3">= </span><span class="s2">false</span><span class="s3">;</span>
+    <span class="s2">boolean </span><span class="s1">digit </span><span class="s3">= </span><span class="s2">false</span><span class="s3">;</span>
+    <span class="s2">boolean </span><span class="s1">correct </span><span class="s3">= </span><span class="s2">false</span><span class="s3">;</span>
+
+    <span class="s2">for </span><span class="s3">(</span><span class="s2">int </span><span class="s1">i </span><span class="s3">= </span><span class="s5">0</span><span class="s3">; </span><span class="s1">i </span><span class="s3">&lt; </span><span class="s1">password</span><span class="s3">.</span><span class="s1">length</span><span class="s3">(); </span><span class="s1">i</span><span class="s3">++) {</span>
+        <span class="s2">char </span><span class="s1">c </span><span class="s3">= </span><span class="s1">password</span><span class="s3">.</span><span class="s1">charAt</span><span class="s3">(</span><span class="s1">i</span><span class="s3">);</span>
+
+        <span class="s2">if </span><span class="s3">(</span><span class="s1">Character</span><span class="s3">.</span><span class="s1">isUpperCase</span><span class="s3">(</span><span class="s1">c</span><span class="s3">))</span>
+            <span class="s1">upper </span><span class="s3">= </span><span class="s2">true</span><span class="s3">;</span>
+        <span class="s2">else if </span><span class="s3">(</span><span class="s1">Character</span><span class="s3">.</span><span class="s1">isLowerCase</span><span class="s3">(</span><span class="s1">c</span><span class="s3">))</span>
+            <span class="s1">lower </span><span class="s3">= </span><span class="s2">true</span><span class="s3">;</span>
+        <span class="s2">else if </span><span class="s3">(</span><span class="s1">Character</span><span class="s3">.</span><span class="s1">isDigit</span><span class="s3">(</span><span class="s1">c</span><span class="s3">))</span>
+            <span class="s1">digit </span><span class="s3">= </span><span class="s2">true</span><span class="s3">;</span>
+    <span class="s3">}</span>
+    <span class="s2">if </span><span class="s3">(</span><span class="s1">upper </span><span class="s3">&amp;&amp; </span><span class="s1">lower </span><span class="s3">&amp;&amp; </span><span class="s1">digit </span><span class="s3">&amp;&amp; </span><span class="s1">password</span><span class="s3">.</span><span class="s1">length</span><span class="s3">() &gt;= </span><span class="s5">8</span><span class="s3">)</span>
+        <span class="s1">correct </span><span class="s3">= </span><span class="s2">true</span><span class="s3">;</span>
+    <span class="s2">return </span><span class="s1">correct</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s2">public static int </span><span class="s1">countUppercase</span><span class="s3">(</span><span class="s1">String text</span><span class="s3">) {</span>
+    <span class="s2">int </span><span class="s1">count </span><span class="s3">= </span><span class="s5">0</span><span class="s3">;</span>
+
+    <span class="s2">for </span><span class="s3">(</span><span class="s2">int </span><span class="s1">i </span><span class="s3">= </span><span class="s5">0</span><span class="s3">; </span><span class="s1">i </span><span class="s3">&lt; </span><span class="s1">text</span><span class="s3">.</span><span class="s1">length</span><span class="s3">(); </span><span class="s1">i</span><span class="s3">++) {</span>
+        <span class="s2">if </span><span class="s3">(</span><span class="s1">Character</span><span class="s3">.</span><span class="s1">isUpperCase</span><span class="s3">(</span><span class="s1">text</span><span class="s3">.</span><span class="s1">charAt</span><span class="s3">(</span><span class="s1">i</span><span class="s3">)))</span>
+            <span class="s1">count</span><span class="s3">++;</span>
+    <span class="s3">}</span>
+
+    <span class="s2">return </span><span class="s1">count</span><span class="s3">;</span>
+<span class="s3">}</span></pre>
+</body>
+</html>
