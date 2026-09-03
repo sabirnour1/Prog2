@@ -48,10 +48,6 @@ public class Testing {
         assertEquals(4, code.length());
     }
     @Test
-    public void testGenerateCode_boundary(){
-        // to be filled out
-    }
-    @Test
     public void testGenerateCode_zerofalse(){
         String code = Lab.generateCode();
         assertFalse(code.length() < 4);
